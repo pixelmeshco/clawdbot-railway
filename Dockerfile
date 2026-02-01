@@ -65,6 +65,8 @@ RUN ln -s /openclaw/docs /docs
 RUN printf '%s\n' '#!/usr/bin/env bash' 'exec node /openclaw/dist/entry.js "$@"' > /usr/local/bin/openclaw \
   && chmod +x /usr/local/bin/openclaw
 
+# Cache bust to force src rebuild
+ARG CACHE_BUST=20260201_0712
 COPY src ./src
 
 # The wrapper listens on this port.
@@ -72,4 +74,3 @@ ENV OPENCLAW_PUBLIC_PORT=8080
 ENV PORT=8080
 EXPOSE 8080
 CMD ["node", "src/server.js"]
-# Cache bust: 1769929572
