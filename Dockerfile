@@ -21,8 +21,8 @@ RUN corepack enable
 WORKDIR /openclaw
 
 # Pin to a known commit for stability. Update this when you want to upgrade OpenClaw.
-# Current: 76361ae (2026-01-31) - "revert: Switch back to tsc for compiling"
-ARG OPENCLAW_GIT_REF=76361ae3abe5f3bc830fbf023828b3fcacce421a
+# Current: 6630769 (2026-02-02) - "fix: start gateway in docker CMD"
+ARG OPENCLAW_GIT_REF=66307695eba71b7da1a03cfa10e770bd4b1c9004
 RUN git clone https://github.com/openclaw/openclaw.git . && \
     git checkout "${OPENCLAW_GIT_REF}"
 
