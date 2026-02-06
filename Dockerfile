@@ -21,8 +21,8 @@ RUN corepack enable
 WORKDIR /openclaw
 
 # Pin to a known commit for stability. Update this when you want to upgrade OpenClaw.
-# Current: 6630769 (2026-02-02) - "fix: start gateway in docker CMD"
-ARG OPENCLAW_GIT_REF=66307695eba71b7da1a03cfa10e770bd4b1c9004
+# Current: 7b2a221 (2026-02-06) - "feat: Opus 4.6 support"
+ARG OPENCLAW_GIT_REF=7b2a221212a8c04ac4220d7fd257eb38efbe8ccc
 RUN git clone https://github.com/openclaw/openclaw.git . && \
     git checkout "${OPENCLAW_GIT_REF}"
 
